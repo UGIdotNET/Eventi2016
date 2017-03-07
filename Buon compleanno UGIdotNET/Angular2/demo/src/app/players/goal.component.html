@@ -1,0 +1,21 @@
+<div *ngIf="player">
+    <h1>Goals {{ player.name }}</h1>
+    <table class="table">
+        <tr>
+            <th>Team</th>
+            <th>Match Date</th>
+            <th>Leage</th>
+            <th>Competition</th>
+            <th>Match</th>
+            <th>Result</th>
+        </tr>
+        <tr *ngFor="let goal of goals">
+            <td>{{ goal.team }}</td>
+            <td>{{ goal.match_date }}</td>
+            <td>{{ goal.league }}</td>
+            <td>{{ goal.competition }}</td>
+            <td>{{ goal.home_team }} - {{ goal.away_team }}</td>
+            <td>{{ goal.home_goal }} - {{ goal.away_goal }}</td>
+        </tr>
+    </table>
+</div>

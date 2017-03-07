@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-lg-4">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="searchPlayer">Search {{ searchText }}:</label>
+                <input type="text" id="searchPlayer" class="form-control"
+                    [(ngModel)]="searchText" />
+            </div>
+            <button (click)="searchPlayer()">Search player</button>
+        </form>
+        <ul class="list-group">
+            <li *ngFor="let player of playerList" class="list-group-item" 
+                (click)="selectPlayer(player)" 
+                [class.active]="player===currentPlayer">
+                {{player.id}} - {{player.name}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-8">
+        <ugi-goals [player]="currentPlayer"></ugi-goals>
+    </div>
+</div>
